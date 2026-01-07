@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogram</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./img/favicon.svg">
+</head>
+
+<body onload="generateImages()">
+    <header class="width-control" id="home">
+        <a href="index.html">
+            <img src="./img/Capa_1.svg" alt="Fotogram Logo"></a>
+    </header>
+
+    <main class="width-control">
+        <dialog id="myDialog" onkeydown="handleKeys(event)">
+            <div class="dialogwrapper">
+                <nav class="dialognav">
+                    <p id="image-title-number">Image Reference Here</p>
+                    <div class="closebuttonbg" onclick="closeImage()">
+                        <img class="closebutton" src="./img/close.svg" alt="Close Button">
+                    </div>
+                </nav>
+                <div class="fixedimageheight">
+                    <img id="zoomedimage" class="bild1zoom" src="./img/1.jpg" alt="Zoomed Image">
+                </div>
+                <section class="dialogfooter">
+                    <div id="previousimage" class="arrowcontainer" onclick="previousImage()">
+                        <img src="./img/left.svg" alt="Arrow Left Button">
+                    </div>
+                    <p id="imagecounter">1/12</p>
+                    <div id="nextimage" class="arrowcontainer" onclick="nextImage()">
+                        <img src="./img/right.svg" alt="Arrow Right Button">
+                    </div>
+                </section>
+            </div>
+        </dialog>
+
+        <section class="main-section">
+            <h1>Your personal photo album</h1>
+            <section id="images-section" class="images-section">
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <section class="footer-section">
+            <a href="https://developerakademie.com/">
+                <img src="./img/Logo.svg" alt="Developer Akademie Logo"></a>
+            <p>© 2023 Developer Akademie GmbH</p>
+        </section>
+    </footer>
+
+
+</body>
+<script src="./script.js"></script>
+
+</html>

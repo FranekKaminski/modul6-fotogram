@@ -1,0 +1,254 @@
+* {
+    font-family: "Figtree", sans-serif;
+    margin: 0px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.width-control {
+    padding-left: calc((100% - 1440px) / 2);
+    padding-right: calc((100% - 1440px) / 2);
+}
+
+/* !! HEADER !! */
+header {
+    background: #09212A;
+    height: 80px;
+}
+
+header img {
+    height: 40px;
+    width: auto;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+/* !! MAIN !! */
+main {
+    background: #06171E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.main-section {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px 0px 50px 0px;
+}
+
+h1 {
+    font-size: 56px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    margin: 0px 10px 40px 10px;
+}
+
+.images-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px 16px;
+    margin: 50px;
+
+}
+
+.images-section img {
+    transition: 0.3s;
+}
+
+.images-section img:hover {
+    transform: scale(1.1);
+    border: 2px solid #6BC1E1;
+    cursor: pointer;
+}
+
+.bilder {
+    height: 150px;
+    width: 150px;
+    border-radius: 16px;
+    border: 2px solid #124658;
+    overflow: hidden;
+}
+
+/* !! DIALOG !! */
+dialog {
+    background: #09212A;
+    border-radius: 40px;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 0px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog:focus {
+    outline: none;
+    border: none;
+}
+
+.dialogwrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background: #09212A;
+}
+
+.fixedimageheight {
+    height: 400px;
+    width: 560px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bild1zoom {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.closebutton {
+    width: 14px;
+    transition: 0.3s;
+}
+
+.closebuttonbg {
+    transition: 0.3s;
+    border-radius: 100px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closebuttonbg:hover {
+    background: rgba(18, 70, 88);
+    cursor: pointer;
+}
+
+.dialognav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.dialogfooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 260px;
+    margin-top: 45px;
+    font-size: 18px;
+}
+
+.arrowcontainer {
+    background: rgba(253, 91, 79, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.arrowcontainer:hover {
+    background: rgba(253, 91, 79, 0.2);
+    cursor: pointer;
+}
+
+/* !! FOOTER !! */
+footer {
+    background: #06171E;
+    background-image: url(./img/Subtract.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 128px;
+}
+
+footer img {
+    height: 32px;
+    width: auto;
+}
+
+footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    font-size: 13px;
+    font-weight: 400;
+    color: #627B84;
+}
+
+.footer-section {
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* !! RESPONSIVE !! */
+@media (max-width: 640px) {
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header img {
+        margin: 0px;
+        height: 32px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .images-section {
+        gap: 10px;
+        margin: 5px;
+    }
+
+    .bilder {
+        height: 140px;
+        width: 140px;
+    }
+
+    .fixedimageheight {
+        width: 80vw;
+    }
+
+    .dialogfooter {
+        width: 80vw;
+    }
+}
