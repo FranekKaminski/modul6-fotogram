@@ -23,22 +23,22 @@
         <dialog id="myDialog" onkeydown="handleKeys(event)">
             <div class="dialogwrapper">
                 <nav class="dialognav">
-                    <p id="image-title-number">Image Reference Here</p>
-                    <div class="closebuttonbg" onclick="closeImage()">
+                    <p tabindex="0" id="image-title-number">Image Reference Here</p>
+                    <button class="closebuttonbg" onclick="closeImage()">
                         <img class="closebutton" src="./img/close.svg" alt="Close Button">
-                    </div>
+                    </button>
                 </nav>
                 <div class="fixedimageheight">
                     <img id="zoomedimage" class="bild1zoom" src="./img/1.jpg" alt="Zoomed Image">
                 </div>
                 <section class="dialogfooter">
-                    <div id="previousimage" class="arrowcontainer" onclick="previousImage()">
+                    <button id="previousimage" class="arrowcontainer" onclick="previousImage()">
                         <img src="./img/left.svg" alt="Arrow Left Button">
-                    </div>
+                    </button>
                     <p id="imagecounter">1/12</p>
-                    <div id="nextimage" class="arrowcontainer" onclick="nextImage()">
+                    <button id="nextimage" class="arrowcontainer" onclick="nextImage()">
                         <img src="./img/right.svg" alt="Arrow Right Button">
-                    </div>
+                    </button>
                 </section>
             </div>
         </dialog>

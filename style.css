@@ -147,6 +147,12 @@ dialog:focus {
     cursor: pointer;
 }
 
+.closebuttonbg:focus-visible {
+    outline: 3px solid #000000;
+    outline-offset: 4px;
+}
+
+
 .dialognav {
     display: flex;
     justify-content: space-between;
@@ -178,6 +184,15 @@ dialog:focus {
 .arrowcontainer:hover {
     background: rgba(253, 91, 79, 0.2);
     cursor: pointer;
+}
+
+.arrowcontainer:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 4px;
+}
+
+button {
+    all: unset;
 }
 
 /* !! FOOTER !! */
@@ -246,6 +261,7 @@ footer p {
 
     .fixedimageheight {
         width: 80vw;
+        height: 300px;
     }
 
     .dialogfooter {

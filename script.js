@@ -1,20 +1,35 @@
 let currentImageIndex = 1;
 const maxImages = 12;
 
-// Bilder Galerie wird hier generiert:
-function generateImages() {
-    const imagesRef = document.getElementById('images-section');
-
-    for (let i = 1; i <= 12; i++) {
-        imagesRef.innerHTML += `<img class="bilder" id="detail${i}" src="./img/${i}.jpg" alt="Bild ${i}" onclick="openImage(${i})">`
-    }
-}
-
 // Damit DIALOG funktioniert:
 const dialogRef = document.getElementById("myDialog");
 const imageTitle = document.getElementById("image-title-number");
 const zoomedImage = document.getElementById("zoomedimage");
 const imageCounter = document.getElementById("imagecounter");
+
+const imageNames = [
+    "Mountain lake",
+    "Japan at night",
+    "Dark clouds",
+    "Yellow blue bird",
+    "Tornado",
+    "Lake",
+    "Animal in the sea",
+    "Night light",
+    "Cute bird",
+    "Leopard cats",
+    "Blue sky with mountains",
+    "Snowy tree",
+];
+
+// Bilder Galerie wird hier generiert:
+function generateImages() {
+    const imagesRef = document.getElementById('images-section');
+
+    for (let i = 1; i <= maxImages; i++) {
+        imagesRef.innerHTML += `<img class="bilder" id="detail${i}" src="./img/${i}.jpg" alt="Bild ${imageNames[currentImageIndex - 1]}" onclick="openImage(${i})" tabindex="0">`
+    }
+}
 
 // Damit DIALOG sich öffnen und schließen kann:
 function openImage(index) {
@@ -37,7 +52,7 @@ dialogRef.addEventListener("click", (event) => {
 function updateDialogImage() {
     zoomedImage.src = `./img/${currentImageIndex}.jpg`;
     imageCounter.innerHTML = `${currentImageIndex} / ${maxImages}`;
-    imageTitle.innerHTML = `Image ${currentImageIndex}`;
+    imageTitle.innerHTML = imageNames[currentImageIndex - 1];
 }
 
 // Damit der Next Button funktioniert
