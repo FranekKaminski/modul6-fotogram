@@ -22,12 +22,19 @@ const imageNames = [
     "Snowy tree",
 ];
 
+// Damit im Dialog bild, titel und counter aktualisiert:
+function updateDialogImage() {
+    zoomedImage.src = `./img/${currentImageIndex}.jpg`;
+    imageCounter.innerHTML = `${currentImageIndex} / ${maxImages}`;
+    imageTitle.innerHTML = imageNames[currentImageIndex - 1];
+}
+
 // Bilder Galerie wird hier generiert:
 function generateImages() {
     const imagesRef = document.getElementById('images-section');
 
     for (let i = 1; i <= maxImages; i++) {
-        imagesRef.innerHTML += `<img class="bilder" id="detail${i}" src="./img/${i}.jpg" alt="Bild ${imageNames[currentImageIndex - 1]}" onclick="openImage(${i})" tabindex="0">`
+        imagesRef.innerHTML += `<img class="bilder" id="detail${i}" src="./img/${i}.jpg" alt="${imageNames[i - 1]}" onclick="openImage(${i})" tabindex="0">`
     }
 }
 
@@ -48,12 +55,7 @@ dialogRef.addEventListener("click", (event) => {
     }
 })
 
-// Damit im Dialog bild, titel und counter aktualisiert:
-function updateDialogImage() {
-    zoomedImage.src = `./img/${currentImageIndex}.jpg`;
-    imageCounter.innerHTML = `${currentImageIndex} / ${maxImages}`;
-    imageTitle.innerHTML = imageNames[currentImageIndex - 1];
-}
+
 
 // Damit der Next Button funktioniert
 function nextImage() {
